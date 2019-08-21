@@ -25,15 +25,15 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="当当当，今天分享下如何生成pfd一个高效的解决方案。在管理系统中，我们需要将页面的内容打印 PDF 和 excel。HTML 打印 PDF 有很多方法，比如先将页面转换成canvas，然后打印canvas等。今天我们介绍2个 npm包，来帮助我们打印出来我们想要的PDF。其实打印pdf这个事儿主要工作在后端，众所周知前端能够做的东西有限，有限，，， 思路1.在页面上点击打印，把需要打印的内容传送">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/images/card_cover/xiaoxin.jpg">
+<meta property="og:image" content="http://yoursite.com/images/covers/nodepdf-cover.jpeg">
 <meta property="og:image" content="http://yoursite.com/2019/08/21/nodepdf/nodePDF2.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/21/nodepdf/nodePDF1.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/21/nodepdf/nodePDF3.png">
-<meta property="og:updated_time" content="2019-08-21T06:42:42.606Z">
+<meta property="og:updated_time" content="2019-08-21T11:09:48.798Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node generate pdf solutions(pdf 解决方案)">
 <meta name="twitter:description" content="当当当，今天分享下如何生成pfd一个高效的解决方案。在管理系统中，我们需要将页面的内容打印 PDF 和 excel。HTML 打印 PDF 有很多方法，比如先将页面转换成canvas，然后打印canvas等。今天我们介绍2个 npm包，来帮助我们打印出来我们想要的PDF。其实打印pdf这个事儿主要工作在后端，众所周知前端能够做的东西有限，有限，，， 思路1.在页面上点击打印，把需要打印的内容传送">
-<meta name="twitter:image" content="http://yoursite.com/images/card_cover/xiaoxin.jpg">
+<meta name="twitter:image" content="http://yoursite.com/images/covers/nodepdf-cover.jpeg">
   
   
     <link rel="icon" href="/images/js.png">
@@ -130,6 +130,9 @@
         height: 30px;
         width: 30px;
         border-radius: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     .flow-chart {
@@ -170,7 +173,7 @@
             
         </div>
         <div class="content" style="overflow: auto">
-            <p><img src="/images/card_cover/xiaoxin.jpg" alt="post-cover"></p>
+            <p><img src="/images/covers/nodepdf-cover.jpeg" alt="post-cover"></p>
 <p>当当当，今天分享下如何生成pfd一个高效的解决方案。在管理系统中，我们需要将页面的内容打印 PDF 和 excel。HTML 打印 PDF 有很多方法，比如先将页面转换成canvas，然后打印canvas等。今天我们介绍2个 npm包，来帮助我们打印出来我们想要的PDF。其实打印pdf这个事儿主要工作在后端，众所周知前端能够做的东西有限，有限，，，</p>
 <h5 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h5><p>1.在页面上点击打印，把需要打印的内容传送给后台</p>
 <p>2.在后端生成对应页面的template（或者是先生成好的）</p>
@@ -210,7 +213,7 @@
     }
 </script>
 
-<!-- for code block highlight --> 
+<!-- for code block highlight -->
 <!-- theme.block_highlight -->
 <!-- we do not guarantee the char sequences spell right, usr himself do it -->
 <link rel="stylesheet" href="/css/highlight_atom.css">

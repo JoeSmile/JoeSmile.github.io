@@ -25,13 +25,14 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="在vue2.x 中，我们经常使用key来提高组件性能，给了 input  或者 在 v-for 中 给子组件/元素一个 key 来加速diff渲染，这也是官方推荐的做法。不过 key 的赋值还真的不能马虎。 案例1. 无key的情况，切换 input 无法自动清空在 input 不加 key 的时候，切换这两个 input 标签，input 框框里的值不会变 案例2. key相同tag标签，多次出">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/images/covers/vue-key.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/08/21/vue-key/vuekey1.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/21/vue-key/vuekey2.png">
-<meta property="og:updated_time" content="2019-08-21T04:26:40.714Z">
+<meta property="og:updated_time" content="2019-08-21T11:07:50.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue key有个坑">
 <meta name="twitter:description" content="在vue2.x 中，我们经常使用key来提高组件性能，给了 input  或者 在 v-for 中 给子组件/元素一个 key 来加速diff渲染，这也是官方推荐的做法。不过 key 的赋值还真的不能马虎。 案例1. 无key的情况，切换 input 无法自动清空在 input 不加 key 的时候，切换这两个 input 标签，input 框框里的值不会变 案例2. key相同tag标签，多次出">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/21/vue-key/vuekey1.png">
+<meta name="twitter:image" content="http://yoursite.com/images/covers/vue-key.jpg">
   
   
     <link rel="icon" href="/images/js.png">
@@ -128,6 +129,9 @@
         height: 30px;
         width: 30px;
         border-radius: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     .flow-chart {
@@ -164,7 +168,7 @@
             
         </div>
         <div class="content" style="overflow: auto">
-            <p>在vue2.x 中，我们经常使用key来提高组件性能，给了 input  或者 在 v-for 中 给子组件/元素一个 key 来加速diff渲染，这也是官方推荐的做法。不过 key 的赋值还真的不能马虎。</p>
+            <p><img src="/images/covers/vue-key.jpg" alt="post-cover"><br>在vue2.x 中，我们经常使用key来提高组件性能，给了 input  或者 在 v-for 中 给子组件/元素一个 key 来加速diff渲染，这也是官方推荐的做法。不过 key 的赋值还真的不能马虎。</p>
 <h4 id="案例1-无key的情况，切换-input-无法自动清空"><a href="#案例1-无key的情况，切换-input-无法自动清空" class="headerlink" title="案例1. 无key的情况，切换 input 无法自动清空"></a>案例1. 无key的情况，切换 input 无法自动清空</h4><p>在 input 不加 key 的时候，切换这两个 input 标签，input 框框里的值不会变<br><img src="vuekey1.png" alt></p>
 <h4 id="案例2-key相同tag标签，多次出现在同一个页面"><a href="#案例2-key相同tag标签，多次出现在同一个页面" class="headerlink" title="案例2. key相同tag标签，多次出现在同一个页面"></a>案例2. key相同tag标签，多次出现在同一个页面</h4><p>这个bug很少见，但见了后会很头疼。通常我们使用key 偷懒的情况使用index来做key，</p>
 <pre><code class="js">&lt;div v-for=&quot;(item, index) in list&quot; :key=&quot;index&quot; /&gt;</code></pre>
@@ -195,7 +199,7 @@
     }
 </script>
 
-<!-- for code block highlight --> 
+<!-- for code block highlight -->
 <!-- theme.block_highlight -->
 <!-- we do not guarantee the char sequences spell right, usr himself do it -->
 <link rel="stylesheet" href="/css/highlight_atom.css">

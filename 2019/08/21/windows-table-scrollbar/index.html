@@ -17,21 +17,22 @@
   
   <title>关于windows系统滚动条占位置的相关总结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是一个很蛋疼的问题，在window下会出现table出现滚动条，且把table-content的内容挤歪了，，，和浏览器无关，这个和操作系统有关系。网上有一些解决方案。在此不一一列举，或者写死columns的宽度，或者把滚动条width设置为0。不同的场景，需要调整的样式不同，所以在此仅总结相关知识。 1.判断window系统 这个window对象通常我们都 navigator.userAgen">
+  <meta name="description" content="这是一个很蛋疼的问题，在window下会出现table出现滚动条，且把table-content的内容挤歪了，，，和浏览器无关，这个和操作系统有关系。网上有一些解决方案。在此不一一列举，或者写死columns的宽度，或者把滚动条width设置为0。不同的场景，需要调整的样式不同，所以在此仅总结相关知识。 1.判断window系统 这个window对象通常我们都 navigator.userAge">
 <meta name="keywords" content="solutions,windows,css-hack,css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于windows系统滚动条占位置的相关总结">
 <meta property="og:url" content="http://yoursite.com/2019/08/21/windows-table-scrollbar/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这是一个很蛋疼的问题，在window下会出现table出现滚动条，且把table-content的内容挤歪了，，，和浏览器无关，这个和操作系统有关系。网上有一些解决方案。在此不一一列举，或者写死columns的宽度，或者把滚动条width设置为0。不同的场景，需要调整的样式不同，所以在此仅总结相关知识。 1.判断window系统 这个window对象通常我们都 navigator.userAgen">
+<meta property="og:description" content="这是一个很蛋疼的问题，在window下会出现table出现滚动条，且把table-content的内容挤歪了，，，和浏览器无关，这个和操作系统有关系。网上有一些解决方案。在此不一一列举，或者写死columns的宽度，或者把滚动条width设置为0。不同的场景，需要调整的样式不同，所以在此仅总结相关知识。 1.判断window系统 这个window对象通常我们都 navigator.userAge">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/images/covers/window-scrollbar-cover.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/08/21/windows-table-scrollbar/windows1.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/21/windows-table-scrollbar/windows2.png">
-<meta property="og:updated_time" content="2019-08-21T09:14:09.119Z">
+<meta property="og:updated_time" content="2019-08-21T11:14:03.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于windows系统滚动条占位置的相关总结">
-<meta name="twitter:description" content="这是一个很蛋疼的问题，在window下会出现table出现滚动条，且把table-content的内容挤歪了，，，和浏览器无关，这个和操作系统有关系。网上有一些解决方案。在此不一一列举，或者写死columns的宽度，或者把滚动条width设置为0。不同的场景，需要调整的样式不同，所以在此仅总结相关知识。 1.判断window系统 这个window对象通常我们都 navigator.userAgen">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/21/windows-table-scrollbar/windows1.png">
+<meta name="twitter:description" content="这是一个很蛋疼的问题，在window下会出现table出现滚动条，且把table-content的内容挤歪了，，，和浏览器无关，这个和操作系统有关系。网上有一些解决方案。在此不一一列举，或者写死columns的宽度，或者把滚动条width设置为0。不同的场景，需要调整的样式不同，所以在此仅总结相关知识。 1.判断window系统 这个window对象通常我们都 navigator.userAge">
+<meta name="twitter:image" content="http://yoursite.com/images/covers/window-scrollbar-cover.jpg">
   
   
     <link rel="icon" href="/images/js.png">
@@ -128,6 +129,9 @@
         height: 30px;
         width: 30px;
         border-radius: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     .flow-chart {
@@ -168,7 +172,8 @@
             
         </div>
         <div class="content" style="overflow: auto">
-            <p>这是一个很蛋疼的问题，在window下会出现table出现滚动条，且把table-content的内容挤歪了，，，和浏览器无关，这个和操作系统有关系。网上有一些解决方案。在此不一一列举，或者写死columns的宽度，或者把滚动条width设置为0。不同的场景，需要调整的样式不同，所以在此仅总结相关知识。</p>
+            <p><img src="/images/covers/window-scrollbar-cover.jpg" alt="post-cover"></p>
+<p>这是一个很蛋疼的问题，在window下会出现table出现滚动条，且把table-content的内容挤歪了，，，和浏览器无关，这个和操作系统有关系。网上有一些解决方案。在此不一一列举，或者写死columns的宽度，或者把滚动条width设置为0。不同的场景，需要调整的样式不同，所以在此仅总结相关知识。</p>
 <h4 id="1-判断window系统"><a href="#1-判断window系统" class="headerlink" title="1.判断window系统"></a>1.判断window系统</h4><p><img src="windows1.png" alt></p>
 <p>这个window对象通常我们都 navigator.userAgent 用来判断浏览器类型，例如</p>
 <pre><code class="js">//IE浏览器
@@ -281,7 +286,7 @@ scrollbar-base-color:color; /*滚动条的基本颜色*/ </code></pre>
     }
 </script>
 
-<!-- for code block highlight --> 
+<!-- for code block highlight -->
 <!-- theme.block_highlight -->
 <!-- we do not guarantee the char sequences spell right, usr himself do it -->
 <link rel="stylesheet" href="/css/highlight_atom.css">
