@@ -15,15 +15,30 @@
   </script>
 
   
-  <title>Tag: node | Hexo</title>
+  <title>koa-jwt 全面解析，安检利器 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/tags/node/index.html">
+  <meta name="description" content="学习 Koa 不易，今天学习到了 koa-jwt 这个登陆验证必不可少的中间件。本文会说明 jwt是什么、token怎么来的、如何验证token。 一反常态，先上代码！(本代码由 koa-generater 生成，安装 koa-jwt,  jsonwebtoken 两个 npm 包 ) 文件名: app.js  红色框：jwt 相关的代码 蓝色框：为了完成demo，在原有脚手架中做的调整。 文件名">
+<meta name="keywords" content="node,koa,jwt,middleware">
+<meta property="og:type" content="article">
+<meta property="og:title" content="koa-jwt 全面解析，安检利器">
+<meta property="og:url" content="http://yoursite.com/2019/08/21/koa-jwt/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="学习 Koa 不易，今天学习到了 koa-jwt 这个登陆验证必不可少的中间件。本文会说明 jwt是什么、token怎么来的、如何验证token。 一反常态，先上代码！(本代码由 koa-generater 生成，安装 koa-jwt,  jsonwebtoken 两个 npm 包 ) 文件名: app.js  红色框：jwt 相关的代码 蓝色框：为了完成demo，在原有脚手架中做的调整。 文件名">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/koa-jwt/jwt1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/koa-jwt/jwt2.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/koa-jwt/jwt3.0.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/koa-jwt/jwt3.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/koa-jwt/jwt4.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/koa-jwt/jwt5.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/koa-jwt/jwt6.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/koa-jwt/jwt7.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/koa-jwt/jwt8.png">
+<meta property="og:updated_time" content="2019-08-21T06:41:13.056Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="koa-jwt 全面解析，安检利器">
+<meta name="twitter:description" content="学习 Koa 不易，今天学习到了 koa-jwt 这个登陆验证必不可少的中间件。本文会说明 jwt是什么、token怎么来的、如何验证token。 一反常态，先上代码！(本代码由 koa-generater 生成，安装 koa-jwt,  jsonwebtoken 两个 npm 包 ) 文件名: app.js  红色框：jwt 相关的代码 蓝色框：为了完成demo，在原有脚手架中做的调整。 文件名">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/21/koa-jwt/jwt1.png">
   
   
     <link rel="icon" href="/images/js.png">
@@ -97,86 +112,140 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .container.tag-cate-wrap {
-        min-height: 93vh;
+          <!--博文页面-->
+
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
+        background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .category-title-inner {
-        padding-top: 50px;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    strong {
-        text-transform: capitalize;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    .flow-chart {
+        text-align: center;
+    }
+
+    img[alt="post-cover"] {
+        display: none;
     }
 </style>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>koa-jwt 全面解析，安检利器</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/images/avatar.jpeg">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> Joe</span>
+                <span class="post-date sub-title">at: 2019-08-21</span>
+            </div>
+            
+                <div>
+                    
+                         <a class="tag is-post-tag" href="/tags/node/">node</a>
+                    
+                         <a class="tag is-post-tag" href="/tags/koa/">koa</a>
+                    
+                         <a class="tag is-post-tag" href="/tags/jwt/">jwt</a>
+                    
+                         <a class="tag is-post-tag" href="/tags/middleware/">middleware</a>
+                    
+                </div>
+            
+        </div>
+        <div class="content" style="overflow: auto">
+            <p>学习 Koa 不易，今天学习到了 koa-jwt 这个登陆验证必不可少的中间件。本文会说明 jwt是什么、token怎么来的、如何验证token。</p>
+<p>一反常态，先上代码！(本代码由 koa-generater 生成，安装 koa-jwt,  jsonwebtoken 两个 npm 包 )</p>
+<p><em>文件名: app.js</em></p>
+<p><img src="jwt1.png" alt></p>
+<p>红色框：jwt 相关的代码</p>
+<p>蓝色框：为了完成demo，在原有脚手架中做的调整。</p>
+<p><em>文件名: routes/index.js</em></p>
+<p><img src="jwt2.png" alt></p>
+<p>这里简单的模仿一个 login 请求，返回一个 token。</p>
+<p><em>文件名: routes/users.js</em></p>
+<p><img src="jwt3.0.png" alt></p>
+<p>users 以下的路由需通过 jwt 验证才能访问</p>
+<p><em>文件名: auth.js</em></p>
+<p><img src="jwt3.png" alt></p>
+<hr>
+<h4 id="思路及说明："><a href="#思路及说明：" class="headerlink" title="思路及说明："></a><strong>思路及说明：</strong></h4><p>1.我们在浏览器输入 <a href="localhost:3000/login" target="_blank" rel="noopener">localhost:3000/login</a> 获取 token。一下大串都是token，分为3部分，用 ‘.’ 分隔；</p>
+<p><img src="jwt4.png" alt></p>
+<p>2.这里用 postman 去访问 <a href="localhost:3000/users/info" target="_blank" rel="noopener">localhost:3000/users/info</a> 模拟访问用户数据。要在 header中加入 authorization, 注意：authorization的值的格式；</p>
+<p><img src="jwt5.png" alt></p>
+<p>3.当输入 users 路由的时候 koa-jwt 不去验证 token 的正确性，仅仅去验证header中是否有 authorization 并且值为 ‘Bearer token’，然后再根据配置中 isRevoked 的函数去进行验证。isRevoked 返回 true 表明 token 不正确，false 表示 token 正确。</p>
+<p>4.在验证中，使用  jsonwebtoken.verify 去验证 token 是否正确，并返回。</p>
+<hr>
+<h4 id="API-解析："><a href="#API-解析：" class="headerlink" title="API 解析："></a><strong>API 解析：</strong></h4><p>Koa-jwt：这个函数还是截图看得清楚</p>
+<p><img src="jwt6.png" alt></p>
+<p>1.<strong>secret</strong>: 可以理解为一个加密因子，在生成 token 的时候用这个因子，验证 token 的时候也用同一个。Serect 可以是数组，当secret是一个数组时，在验证 token 时任何一个 因子通过验证，token就合法有效。</p>
+<p>2.<strong>passthrough</strong>: 当为true时，即使在 header 中没有 authorization 也会通过这个 中间件（仅仅通过中间件的验证，没有通过 jsonwebtoken.verify）</p>
+<p>3.<strong>isRevoked</strong>：需要一个函数来验证token的对错。这个函数有3个参数：ctx, decodedToken, token。其中 token 可以直接被验证： jsonwebtoken.verify(token)</p>
+<hr>
+<h4 id="Jsonwebtoken-这个才是主角！"><a href="#Jsonwebtoken-这个才是主角！" class="headerlink" title="Jsonwebtoken:(这个才是主角！)"></a><strong>Jsonwebtoken:(这个才是主角！)</strong></h4><p>jsonwebtoken.sign(payload, secretOrPrivateKey, [options, callback]) 生成 token</p>
+<p>1.<strong>payload</strong> 是需要被加密的数据（我的理解 jwt其实就是加密解密和验证的过程）。在payload里有三个key很特别：iat（issued at）、exp（expiresIn）、nbf（notBefore），这几个参数推荐写在 options 中，不建议写在 payload 里；</p>
+<p>2.<strong>secretOrPrivateKey</strong> 可以是字符串，也可以是对成加密的 key，或者非对称加密的私有key；</p>
+<p>3.<strong>options</strong> 这里可以选择的参数就好多了，algorithms：加密算法，默认是HS256，expriesIn:token有效持续时间，notBefore: token在什么时候失效，更多参数请参考官网；</p>
+<p>4.返回一个token。</p>
+<hr>
+<h4 id="jwt-verify"><a href="#jwt-verify" class="headerlink" title="jwt.verify"></a><strong>jwt.verify</strong></h4><pre><code class="js">jwt.verify(token, secretOrPublicKey, [options, callback])// 对token的验证</code></pre>
+<p>1.<strong>token</strong>: 当然是用 sign 函数生成的token啦；</p>
+<p>2.<strong>secretOrPublicKey</strong>: 与生成 token 的加密因子相互对应，要么是相同的字符串和对称加密的key，或者是非对称加密的公有key；</p>
+<p>3.<strong>options</strong>: 与 sign 相互照应且要一致。audience，issuer，jwtid等。</p>
+<p>4.正确的时候返回 payload，错误的时候throw 一个 err，里面包含了错误的message，根据message判断错误类型。</p>
+<p><img src="jwt7.png" alt></p>
+<p><strong>文档这里有个坑:</strong></p>
+<p><strong>expiredIn</strong>:默认单位是 <strong>秒！！！</strong> 以下是铁证啊（jsonwebtoken/verify.js ，这里是用秒做的对比，千万别以为是毫秒</p>
+<p><img src="jwt8.png" alt></p>
+<blockquote>
+<p>Tips: 通常情况下，我们也会在cookie里写一份token，这样每个请求都可以通过token验证，此时可以忽略 header中的autherization（passthrough: true）</p>
+</blockquote>
 
-
-<div class="container tag-cate-wrap">
-    <div class="category-title-inner content has-text-centered">
-        <h1><strong style="border-top: 2px solid; border-bottom: 2px solid;">tag·node</strong></h1>
+        </div>
+        <div class="post-reply">
+            
+            
+        </div>
     </div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
 
-    
-    
-        <div class="box">
-            <article class="media">
-                
-                <a href="/2019/08/21/koa-jwt/">
-                    
-                    <div class="media-left">
-                        <figure class="image is-128x128">
-                            <img src="jwt1.png" style="height: 100%; width: 100%">
-                        </figure>
-                    </div>
-                    
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>koa-jwt 全面解析，安检利器</strong> <small class="post-date">at: 2019-08-21</small>
-                                <br>
-                                学习 Koa 不易，今天学习到了 koa-jwt 这个登陆验证必不可少的中间件。本文会说明 jwt是什么、token怎么来的、如何验证token。
-一反常态，先上代码！(本代码由 koa-generater 生成，安装 koa-jwt,  jsonwebtoken 两个 npm 包 )
-文件名: app.js
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
 
-红色框：jwt 相关的代码
-蓝色框：为了完..
-                            </p>
-                            <button class="button is-info">Read</button>
-                        </div>
-                    </div>
-                </a>
-            </article>
-        </div>
-    
-        <div class="box">
-            <article class="media">
-                
-                <a href="/2019/08/21/nodepdf/">
-                    
-                    <div class="media-left">
-                        <figure class="image is-128x128">
-                            <img src="/images/card_cover/xiaoxin.jpg" style="height: 100%; width: 100%">
-                        </figure>
-                    </div>
-                    
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>node generate pdf solutions(pdf 解决方案)</strong> <small class="post-date">at: 2019-08-21</small>
-                                <br>
-                                
-当当当，今天分享下如何生成pfd一个高效的解决方案。在管理系统中，我们需要将页面的内容打印 PDF 和 excel。HTML 打印 PDF 有很多方法，比如先将页面转换成canvas，然后打印canvas等。今天我们介绍2个 npm包，来帮助我们打印出来我们想要的PDF。其实打印pdf这个事儿主要工作在后端，众所周知前端能够做的东西有限，有限，，，
-思..
-                            </p>
-                            <button class="button is-info">Read</button>
-                        </div>
-                    </div>
-                </a>
-            </article>
-        </div>
-    
-</div>
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_atom.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
+
       </div>
   </div>
   <style>
