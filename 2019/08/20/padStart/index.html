@@ -15,21 +15,26 @@
   </script>
 
   
-  <title>Category: life | Hexo</title>
+  <title>padStart &amp; padEnd | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/categories/life/index.html">
+  <meta name="description" content="在ES8中，为String新增 padStart &amp;amp; padEnd， 用来填充字符串。 1.使用场景 生成统一位数的文件名、编号等；eg：0001.txt ～ 9999.txt 带有统一前缀或后缀的字符串、名字、编码等；eg：¥1,000.00，#EFEFEF，0x001F 生成位数一样的字符串，以便打印和显示。   2.语法str.padStart(targetLength [, pa">
+<meta name="keywords" content="es6+,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="padStart &amp; padEnd">
+<meta property="og:url" content="http://yoursite.com/2019/08/20/padStart/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在ES8中，为String新增 padStart &amp;amp; padEnd， 用来填充字符串。 1.使用场景 生成统一位数的文件名、编号等；eg：0001.txt ～ 9999.txt 带有统一前缀或后缀的字符串、名字、编码等；eg：¥1,000.00，#EFEFEF，0x001F 生成位数一样的字符串，以便打印和显示。   2.语法str.padStart(targetLength [, pa">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/images/card_cover/xiaoxin.jpg">
+<meta property="og:updated_time" content="2019-08-21T04:15:21.810Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="padStart &amp; padEnd">
+<meta name="twitter:description" content="在ES8中，为String新增 padStart &amp;amp; padEnd， 用来填充字符串。 1.使用场景 生成统一位数的文件名、编号等；eg：0001.txt ～ 9999.txt 带有统一前缀或后缀的字符串、名字、编码等；eg：¥1,000.00，#EFEFEF，0x001F 生成位数一样的字符串，以便打印和显示。   2.语法str.padStart(targetLength [, pa">
+<meta name="twitter:image" content="http://yoursite.com/images/card_cover/xiaoxin.jpg">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/images/js.png">
   
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link rel="stylesheet" href="/css/common.css">
 <link rel="stylesheet" href="/css/nav.css">
@@ -64,12 +69,16 @@
                 Home
             </a>
             
-            <a class="nav-item" href="/works">
-                My Works
-            </a>
-            
             <a class="nav-item" href="/about">
                 About
+            </a>
+            
+            <a class="nav-item" href="/tags">
+                Tags
+            </a>
+            
+            <a class="nav-item" href="/categories">
+                Categories
             </a>
             
         </div>
@@ -84,12 +93,16 @@
                 Home
             </a>
             
-            <a class="nav-item flex-1" href="/works">
-                My Works
-            </a>
-            
             <a class="nav-item flex-1" href="/about">
                 About
+            </a>
+            
+            <a class="nav-item flex-1" href="/tags">
+                Tags
+            </a>
+            
+            <a class="nav-item flex-1" href="/categories">
+                Categories
             </a>
             
         </div>
@@ -99,55 +112,139 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <style>
-    .container.tag-cate-wrap {
-        min-height: 93vh;
+          <!--博文页面-->
+
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
+        background-size: cover;
+        background-color: lightsteelblue;
     }
 
-    .category-title-inner {
-        padding-top: 50px;
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
     }
 
-    strong {
-        text-transform: capitalize;
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    .flow-chart {
+        text-align: center;
+    }
+
+    img[alt="post-cover"] {
+        display: none;
     }
 </style>
-
-
-<div class="container tag-cate-wrap">
-    <div class="category-title-inner content has-text-centered">
-        <h1><strong style="border-top: 2px solid; border-bottom: 2px solid;">category·life</strong></h1>
-    </div>
-
-    
-    
-        <div class="box">
-            <article class="media">
-                
-                <a href="/2019/08/20/hello-world copy/">
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>padStart & padEnd</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/images/avatar.jpeg">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> Joe</span>
+                <span class="post-date sub-title">at: 2019-08-20</span>
+            </div>
+            
+                <div>
                     
-                    <div class="media-left">
-                        <figure class="image is-128x128">
-                            <img src="/images/card_cover/xiaoxin.jpg" style="height: 100%; width: 100%">
-                        </figure>
-                    </div>
+                         <a class="tag is-post-tag" href="/tags/es6/">es6+</a>
                     
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>Hello World</strong> <small class="post-date">at: 2019-08-20</small>
-                                <br>
-                                
-Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ..
-                            </p>
-                            <button class="button is-info">Read</button>
-                        </div>
-                    </div>
-                </a>
-            </article>
+                         <a class="tag is-post-tag" href="/tags/javascript/">javascript</a>
+                    
+                </div>
+            
         </div>
-    
-</div>
+        <div class="content" style="overflow: auto">
+            <p><img src="/images/card_cover/xiaoxin.jpg" alt="post-cover"></p>
+<p>在ES8中，为String新增 padStart &amp; padEnd， 用来填充字符串。</p>
+<h4 id="1-使用场景"><a href="#1-使用场景" class="headerlink" title="1.使用场景"></a>1.使用场景</h4><ul>
+<li>生成统一位数的文件名、编号等；eg：0001.txt ～ 9999.txt</li>
+<li>带有统一前缀或后缀的字符串、名字、编码等；eg：¥1,000.00，#EFEFEF，0x001F</li>
+<li>生成位数一样的字符串，以便打印和显示。</li>
+</ul>
+<hr>
+<h4 id="2-语法"><a href="#2-语法" class="headerlink" title="2.语法"></a>2.语法</h4><p><strong>str.padStart(targetLength [, padString])</strong></p>
+<hr>
+<h4 id="3-参数"><a href="#3-参数" class="headerlink" title="3.参数"></a>3.参数</h4><p><strong>targetLength</strong></p>
+<p>当前字符串需要填充到的目标长度。如果这个数值小于当前字符串的长度，则返回当前字符串本身。</p>
+<p><strong>padString 可选</strong></p>
+<p>填充字符串。如果字符串太长，使填充后的字符串长度超过了目标长度，则只保留最左侧的部分，其他部分会被截断。此参数的缺省值为 “ “（U+0020）。</p>
+<hr>
+<p>4.返回值</p>
+<p>在原字符串开头填充指定的填充字符串直到目标长度所形成的新字符串</p>
+<hr>
+<p>5.示例</p>
+<pre><code class="javascript">&#39;abc&#39;.padStart(10); // &quot; abc&quot;
+
+&#39;abc&#39;.padStart(10, &quot;foo&quot;); // &quot;foofoofabc&quot;
+
+&#39;abc&#39;.padStart(6,&quot;123465&quot;); // &quot;123abc&quot;
+
+&#39;abc&#39;.padStart(8, &quot;0&quot;); // &quot;00000abc&quot;
+
+&#39;abc&#39;.padStart(1); // &quot;abc&quot;</code></pre>
+<hr>
+<p>6.源代码（polyfill 方法)</p>
+<pre><code class="javascript">if (!String.prototype.padStart) {
+  String.prototype.padStart = function padStart(targetLength,padString) {
+    targetLength = targetLength&gt;&gt;0; //floor if number or convert non-number to 0;
+    padString = String((typeof padString !== &#39;undefined&#39; ? padString : &#39;&#39;));
+
+    if (this.length &gt; targetLength) {
+      return String(this);
+    }
+    else {
+      targetLength = targetLength–this.length;
+      if (targetLength &gt; padString.length) {
+      //append to original to ensure we are longer than needed
+        padString += padString.repeat(targetLength/padString.length); 
+      }
+    return padString.slice(0,targetLength) + String(this);
+    }
+  };
+}</code></pre>
+<p>padEnd 同理。 也可以用 lodash 相应的 padStart 和 padEnd 代替</p>
+
+        </div>
+        <div class="post-reply">
+            
+            
+        </div>
+    </div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+
+<!-- for code block highlight --> 
+<!-- theme.block_highlight -->
+<!-- we do not guarantee the char sequences spell right, usr himself do it -->
+<link rel="stylesheet" href="/css/highlight_atom.css">
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
+
       </div>
   </div>
   <style>
@@ -161,7 +258,7 @@ Welcome to Hexo! This is your very first post. Check documentation for more info
     color: #e1e1e1;
   }
 </style>
-
+<footer id="footer" class="has-text-centered is-flex center"></footer>
 <script src="/js/search_core.js"></script>
 <script src="/js/script.js"></script>
 

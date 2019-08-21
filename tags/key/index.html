@@ -15,28 +15,19 @@
   </script>
 
   
-  <title>Hello World | Hexo</title>
+  <title>Tag: key | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quic">
-<meta name="keywords" content="222,333,444">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/08/20/hello-world copy/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/tags/key/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quic">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/images/card_cover/xiaoxin.jpg">
-<meta property="og:updated_time" content="2019-08-20T10:00:59.681Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quic">
-<meta name="twitter:image" content="http://yoursite.com/images/card_cover/xiaoxin.jpg">
+<meta name="twitter:title" content="Hexo">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/images/js.png">
   
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link rel="stylesheet" href="/css/common.css">
 <link rel="stylesheet" href="/css/nav.css">
@@ -71,12 +62,16 @@
                 Home
             </a>
             
-            <a class="nav-item" href="/works">
-                My Works
-            </a>
-            
             <a class="nav-item" href="/about">
                 About
+            </a>
+            
+            <a class="nav-item" href="/tags">
+                Tags
+            </a>
+            
+            <a class="nav-item" href="/categories">
+                Categories
             </a>
             
         </div>
@@ -91,12 +86,16 @@
                 Home
             </a>
             
-            <a class="nav-item flex-1" href="/works">
-                My Works
-            </a>
-            
             <a class="nav-item flex-1" href="/about">
                 About
+            </a>
+            
+            <a class="nav-item flex-1" href="/tags">
+                Tags
+            </a>
+            
+            <a class="nav-item flex-1" href="/categories">
+                Categories
             </a>
             
         </div>
@@ -106,106 +105,55 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <!--博文页面-->
-
-<style>
-    .header-box {
-        height: 370px;
-        filter: blur(10px);
-        background-size: cover;
-        background-color: lightsteelblue;
+          <style>
+    .container.tag-cate-wrap {
+        min-height: 93vh;
     }
 
-    .post-box {
-        padding: 15px;
-        padding-top: 60px;
-        min-height: 80vh;
-        margin-top: -200px;
-        border-radius: 4px;
-        background-color: rgba(255,255,255,.8);
+    .category-title-inner {
+        padding-top: 50px;
     }
 
-    .post-avatar {
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-    }
-
-    .flow-chart {
-        text-align: center;
-    }
-
-    img[alt="post-cover"] {
-        display: none;
+    strong {
+        text-transform: capitalize;
     }
 </style>
-<header>
-    <div id="header_box" class="header-box"></div>
-</header>
-<section>
-    <div class="container post-box">
-        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
-            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
-                <strong>Hello World</strong>
-            </h1>
-            
-            <div class="is-flex align-center">
-                <img class="post-avatar" src="/images/avatar.jpeg">
-                <span style="padding:0 10px;"> <span class="sub-title">By</span> Joe</span>
-                <span class="post-date sub-title">at: 2019-08-20</span>
-            </div>
-            
-                <div>
-                    
-                         <a class="tag is-post-tag" href="/tags/222/">222</a>
-                    
-                         <a class="tag is-post-tag" href="/tags/333/">333</a>
-                    
-                         <a class="tag is-post-tag" href="/tags/444/">444</a>
-                    
-                </div>
-            
-        </div>
-        <div class="content" style="overflow: auto">
-            <p><img src="/images/card_cover/xiaoxin.jpg" alt="post-cover"></p>
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        </div>
-        <div class="post-reply">
-            
-            
-        </div>
+<div class="container tag-cate-wrap">
+    <div class="category-title-inner content has-text-centered">
+        <h1><strong style="border-top: 2px solid; border-bottom: 2px solid;">tag·key</strong></h1>
     </div>
-</section>
-<script>
-    // 获取第一张图, 用以当封面背景图
-    var img = document.querySelectorAll('img')[1]
 
-    if (img) {
-        var header_box = document.querySelector('#header_box')
-        header_box.style.backgroundImage = 'url('+ img.src +')'
-    }
-</script>
-
-<!-- for code block highlight --> 
-<!-- theme.block_highlight -->
-<!-- we do not guarantee the char sequences spell right, usr himself do it -->
-<link rel="stylesheet" href="/css/highlight_rainbow.css">
-<script src="/js/highlight.min.js"></script>
-<script type="text/javascript"> hljs.initHighlightingOnLoad();</script>
-
+    
+    
+        <div class="box">
+            <article class="media">
+                
+                <a href="/2019/08/21/vue-key/">
+                    
+                    <div class="media-left">
+                        <figure class="image is-128x128">
+                            <img src="vuekey1.png" style="height: 100%; width: 100%">
+                        </figure>
+                    </div>
+                    
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>vue key有个坑</strong> <small class="post-date">at: 2019-08-21</small>
+                                <br>
+                                在vue2.x 中，我们经常使用key来提高组件性能，给了 input  或者 在 v-for 中 给子组件/元素一个 key 来加速diff渲染，这也是官方推荐的做法。不过 key 的赋值还真的不能马虎。
+案例1. 无key的情况，切换 input 无法自动清空在 input 不加 key 的时候，切换这两个 input 标签，input 框框里的值不..
+                            </p>
+                            <button class="button is-info">Read</button>
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div>
+    
+</div>
       </div>
   </div>
   <style>
@@ -219,7 +167,7 @@
     color: #e1e1e1;
   }
 </style>
-
+<footer id="footer" class="has-text-centered is-flex center"></footer>
 <script src="/js/search_core.js"></script>
 <script src="/js/script.js"></script>
 
