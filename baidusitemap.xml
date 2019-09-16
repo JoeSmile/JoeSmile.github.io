@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://smilejoe.cn/hapi-confidence.html</loc>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://smilejoe.cn/angular-relevant-links.html</loc>
     <lastmod>2019-09-10</lastmod>
   </url>  <url>
@@ -16,13 +19,13 @@
     <loc>http://smilejoe.cn/absolute-equal.html</loc>
     <lastmod>2019-08-29</lastmod>
   </url>  <url>
-    <loc>http://smilejoe.cn/richEditor.html</loc>
-    <lastmod>2019-08-29</lastmod>
-  </url>  <url>
     <loc>http://smilejoe.cn/koa-static.html</loc>
     <lastmod>2019-08-29</lastmod>
   </url>  <url>
     <loc>http://smilejoe.cn/nodepdf.html</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://smilejoe.cn/richEditor.html</loc>
     <lastmod>2019-08-29</lastmod>
   </url>  <url>
     <loc>http://smilejoe.cn/koa-router.html</loc>

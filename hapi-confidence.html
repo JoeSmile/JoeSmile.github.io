@@ -7,18 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Tag: 面试题 - Hexo</title>
+<title>hapi-confidence - Hexo</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://smilejoe.cn/tags/面试题/index.html">
+    <meta name="description" content="一个非常有用环境的插件">
+<meta name="keywords" content="前端,全栈,node,plugin,hapi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hapi-confidence">
+<meta property="og:url" content="http://smilejoe.cn/hapi-confidence.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一个非常有用环境的插件">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://smilejoe.cn/images/og_image.png">
+<meta property="og:image" content="http://smilejoe.cn/images/covers/confidence_logo.png">
+<meta property="og:updated_time" content="2019-09-16T07:58:13.861Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:image" content="http://smilejoe.cn/images/og_image.png">
+<meta name="twitter:title" content="hapi-confidence">
+<meta name="twitter:description" content="一个非常有用环境的插件">
+<meta name="twitter:image" content="http://smilejoe.cn/images/covers/confidence_logo.png">
 
 
 
@@ -92,7 +97,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/avatar.jpeg" alt="Hexo" height="28">
+                <img src="/images/avatar.jpeg" alt="hapi-confidence" height="28">
             
             </a>
         </div>
@@ -143,60 +148,159 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">面试题</a></li>
-        </ul>
-        </nav>
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/covers/confidence_logo.png" alt="hapi-confidence">
+        </span>
     </div>
-</div>
-
-    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-01-07T09:59:47.000Z">2019-01-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/javascript/">javascript</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2019-09-16T02:46:51.000Z">2019-09-16</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 672 words)
+                    5 minutes read (About 683 words)
                 </span>
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> visits
+                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/absolute-equal.html">absolute-equal</a>
+                hapi-confidence
             
         </h1>
         <div class="content">
-            <p>经典面试题，问起来这两者区别，更多的时候听到的回答是 === 是会比较类型， == 不会。不过进一步问 1 == [1]  返回 true  这是为什么呢？ 很多面试者就不知道怎么回答了。跟着问题，我们进一步了解下 == 和 === 的机制。 </p>
-<p>以下是 == （Abstract Equality）比较的算法：<br><img src="absolute-equal/equal1.png" alt></p>
-<p>大致翻译如下：当比较 x == y的时候 ，如果 x，y是同类型：</p>
-<p> 如果x，是 null 或者 undefined，返回 true</p>
-<p>如果 x 是 NaN，返回 false（这就是为什么 NaN 永远不等于 NaN）</p>
+            <blockquote>
+<p>记录一个confidence插件，简单明了地根据不同环境变量更换配置。平时我们写 config 或者 settings 文件要仔细区分环境，参数值比较混乱，难管理。有了 confidence 插件之后，再也不用担心环境参数混乱的问题了。</p>
+</blockquote>
+<p><strong>confidence 地址</strong><br><a href="https://github.com/hapipal/confidence" target="_blank" rel="noopener">https://github.com/hapipal/confidence</a></p>
+<h2 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h2><p>结构很清晰，根据不同的环境变量获取不同的值。还能做一些范围控制。使用起来很简单，只要配置<strong>标准参数</strong>(如:$filter)即可。</p>
+<pre><code class="js">{
+    &quot;key1&quot;: &quot;abc&quot;,
+    &quot;key2&quot;: {
+        &quot;$filter&quot;: &quot;env&quot;,
+        &quot;production&quot;: {
+            &quot;deeper&quot;: {
+                &quot;$value&quot;: &quot;value&quot;
+            }
+        },
+        &quot;$default&quot;: {
+            &quot;$filter&quot;: &quot;platform&quot;,
+            &quot;android&quot;: 0,
+            &quot;ios&quot;: 1,
+            &quot;$default&quot;: 2
+        }
+    },
+    &quot;ab&quot;: {
+        &quot;$filter&quot;: &quot;random.a&quot;,
+        &quot;$range&quot;: [
+            { &quot;limit&quot;: 10, &quot;value&quot;: 4 },
+            { &quot;limit&quot;: 20, &quot;value&quot;: 5 }
+        ],
+        &quot;$default&quot;: 6
+    },
+    &quot;$meta&quot;: {
+        &quot;description&quot;: &quot;example file&quot;
+    }
+}</code></pre>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>我们在使用confidence之前，先介绍下它的API</p>
+<blockquote>
+<p>new Store(document) 创建一个配置容器<br>store.load(document) 载入一份配置文件<br>store.get() 根据参数生成配置   </p>
+</blockquote>
+<pre><code class="js">// 一个简单的demo
+const { Store } = require(&#39;confidence&#39;)
+const { env } = process
+// 从环境变量取值
+const criteria = {
+  env: env.NODE_ENV
+}
+const settings = {
+  platform: {
+    $filter: &#39;env&#39;,
+    development: &#39;this is DEV environment&#39;,
+    qa: &#39;this is in QA environment&#39;,
+    production: &#39;this is in PRO environment&#39;,
+    $default: &#39;this is in LOCAL environment&#39;
+  }
+}
+// 创建配置容器
+const store = new Store(settings)
+
+module.exports = {
+  settings: store.get(&#39;/&#39;, criteria) //根据环境变量生成对应的配置
+}
+// settings 结构为 { platform: &#39;this is in DEV environment&#39; }</code></pre>
+<h2 id="标准参数"><a href="#标准参数" class="headerlink" title="标准参数"></a>标准参数</h2><h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><blockquote>
+<p>规则：变量名只能用 字母 和 ‘_’。根据匹配环境变量的值，来选择用什么变量。（看个栗子瞬间就懂）</p>
+</blockquote>
+<pre><code class="js">platform: {
+  $filter: &#39;NODE_ENV&#39;,
+  development: &#39;this is DEV environment&#39;,
+  qa: &#39;this is in QA environment&#39;,
+  production: &#39;this is in PRO environment&#39;,
+  $default: &#39;this is in LOCAL environment&#39;
+}</code></pre>
+<blockquote>
+<p>在终端执行export，会把所有的环境变量打印出来，观察下 NODE_ENV 的值，本人本地的 NODE_ENV 值是 dev， 故直接用default值。<br>最终结果： { platform: ‘this is in LOCAL environment’ }</p>
+</blockquote>
+<p>PS: 把$filter 当作 switch-case 语句就好理解了。</p>
+<h3 id="range"><a href="#range" class="headerlink" title="range"></a>range</h3><p>先上个栗子</p>
+<pre><code class="js">key: {
+    &quot;$filter&quot;: &quot;random&quot;,
+    &quot;$range&quot;: [
+        { &quot;limit&quot;: 10, &quot;value&quot;: 4 },
+        { &quot;limit&quot;: 20, &quot;value&quot;: 5 }
+    ],
+    &quot;$default&quot;: 6
+}</code></pre>
+<blockquote>
+<p>当 random 小于10，key的值为4；<br>当 random 大于10并且小于等于20， key的值为5；<br>当 random 大于20，key的值为6</p>
+</blockquote>
+<h3 id="Shared-values（-base）"><a href="#Shared-values（-base）" class="headerlink" title="Shared values（$base）"></a>Shared values（$base）</h3><p>用栗子说明问题</p>
+<pre><code class="js">{
+  &quot;$filter&quot;: &quot;env&quot;,
+  &quot;$base&quot;: {
+      &quot;logLocation&quot;: &quot;/logs&quot;
+  },
+  &quot;production&quot;:  {
+      &quot;logLevel&quot;: &quot;error&quot;
+  },
+  &quot;qa&quot;:  {
+      &quot;logLevel&quot;: &quot;info&quot;,
+      &quot;logLocation&quot;: &quot;/qa/logs&quot;
+  },
+  &quot;staging&quot;:  {
+      &quot;logLevel&quot;: &quot;debug&quot;
+  }
+}</code></pre>
+<p>当写了$base，以下的条件中如果不覆写 logLocation, 就默认有一个”logLocation”: “/logs” 属性。<br>所以当 env 是 production 时，结果为   </p>
+<pre><code class="js">{ 
+  &quot;logLevel&quot;: &quot;error&quot;,
+  &quot;logLocation&quot;: &quot;/logs&quot;
+}</code></pre>
+<p>当 env 是 qa 时，结果为</p>
+<pre><code class="js">{
+  &quot;logLevel&quot;: &quot;info&quot;,
+  &quot;logLocation&quot;: &quot;/qa/logs&quot;
+}</code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>使用confidence设置配置文件快捷方便，清晰明了，node型框架(hapi or koa)统统适用。</p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>这里有一个 hapi 小型脚手架，包含confidence插件， Glue插件等，练手好demo！<br>demo传送门 <a href="https://github.com/JoeSmile/hapi-confidence" target="_blank" rel="noopener">https://github.com/JoeSmile/hapi-confidence</a></p>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/absolute-equal.html#more">Read More</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
@@ -206,7 +310,19 @@
 
 
 
-
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/angular-relevant-links.html">
+                <span class="level-item">angular_relevant_links</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 
@@ -1101,7 +1217,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/avatar.jpeg" alt="Hexo" height="28">
+                    <img src="/images/avatar.jpeg" alt="hapi-confidence" height="28">
                 
                 </a>
                 <p class="is-size-7">

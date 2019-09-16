@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://smilejoe.cn/hapi-confidence.html</loc>
+    
+    <lastmod>2019-09-16T07:58:13.861Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://smilejoe.cn/angular-relevant-links.html</loc>
     
     <lastmod>2019-09-10T02:12:40.874Z</lastmod>
@@ -37,13 +44,6 @@
   </url>
   
   <url>
-    <loc>http://smilejoe.cn/richEditor.html</loc>
-    
-    <lastmod>2019-08-29T01:52:12.301Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://smilejoe.cn/koa-static.html</loc>
     
     <lastmod>2019-08-29T01:52:12.301Z</lastmod>
@@ -52,6 +52,13 @@
   
   <url>
     <loc>http://smilejoe.cn/nodepdf.html</loc>
+    
+    <lastmod>2019-08-29T01:52:12.301Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://smilejoe.cn/richEditor.html</loc>
     
     <lastmod>2019-08-29T01:52:12.301Z</lastmod>
     
