@@ -44,20 +44,6 @@
   </url>
   
   <url>
-    <loc>http://smilejoe.cn/koa-static.html</loc>
-    
-    <lastmod>2019-08-29T01:52:12.301Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://smilejoe.cn/nodepdf.html</loc>
-    
-    <lastmod>2019-08-29T01:52:12.301Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://smilejoe.cn/richEditor.html</loc>
     
     <lastmod>2019-08-29T01:52:12.301Z</lastmod>
@@ -65,7 +51,21 @@
   </url>
   
   <url>
+    <loc>http://smilejoe.cn/koa-static.html</loc>
+    
+    <lastmod>2019-08-29T01:52:12.301Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://smilejoe.cn/koa-router.html</loc>
+    
+    <lastmod>2019-08-29T01:52:12.301Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://smilejoe.cn/nodepdf.html</loc>
     
     <lastmod>2019-08-29T01:52:12.301Z</lastmod>
     
